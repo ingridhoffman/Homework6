@@ -15,6 +15,13 @@
 			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 			crossorigin="anonymous"
 		/>
+		<!-- Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+			integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+			crossorigin="anonymous"
+		/>
 
 		<title>Weather Dashboard</title>
 	</head>
@@ -24,12 +31,20 @@
 		</header>
 		<main class="row">
 			<aside class="col-sm-4">
-				<div id="search">Search Here</div>
-				<div id="history">
-					<ul>
-						<li>Past City</li>
-					</ul>
-				</div>
+				<form class="input-group">
+					<input
+						type="text"
+						class="form-control"
+						placeholder="City"
+						id="searchEntry"
+					/>
+					<div class="input-group-append">
+						<button class="btn btn-primary" type="button" id="searchBtn">
+							<i class="fas fa-search"></i>
+						</button>
+					</div>
+				</form>
+				<div class="btn-group-vertical" id="history"></div>
 			</aside>
 			<div class="col-sm-8">
 				<section class="row">
@@ -68,6 +83,7 @@
 			crossorigin="anonymous"
 		></script>
 		<!-- Application JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="script.js"></script>
 	</body>
 </html>

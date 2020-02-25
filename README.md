@@ -38,6 +38,8 @@ The following image demonstrates the application functionality:
 
 ## Developer Notes
 
+Added functionality to open page with weather at current user location (if geolocation is available)
+
 ### HTML
 
 - Header with Page Title
@@ -52,10 +54,31 @@ The following image demonstrates the application functionality:
 ### Script Logic
 
 ```
+Globals
+- Variable for Current City
+- Array for search history
+- API Key
+
+Set Current City
+- Get user entry from search box
+- Get user entry from history list
+
+Make API Call
+- Custom query URL with variables for City and API Key
+
+Get Data
+-
+
+
+Local Storage
+- Get search history when page is opened or refreshed
+- Update history array when user does a search - verify search is for City not already on list
 
 ```
 
 ### Known Issues
+
+Can't use Return button to search - it refreshes page instead
 
 ### Acknowledgements
 
