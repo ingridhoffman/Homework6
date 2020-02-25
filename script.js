@@ -45,23 +45,6 @@ $("#searchBtn").on("click", newCity);
 // Event listener for search history
 $(":input").on("click", previousCity);
 
-// SERVER INTERACTION
-// Custom url with user input and unique key
-var queryURL =
-	"https://api.openweathermap.org/data/2.5/weather?" +
-	queryCity +
-	"&appid=" +
-	key;
-console.log(queryURL);
-
-// Call to Open Weather API
-// $.ajax({
-// 	url: queryURL,
-// 	method: "GET"
-// }).then(function(response) {
-// 	console.log(response);
-// });
-
 // APPLICATION FUNCTIONS
 // When user searches for City
 function newCity(event) {
@@ -77,7 +60,7 @@ function newCity(event) {
 	createButton(userEntry);
 
 	// show weather for selected city
-	showWeather(userEntry);
+	getWeather(userEntry);
 }
 
 // When user chooses city from search history
@@ -86,7 +69,7 @@ function previousCity(event) {
 
 	// var selectedCity = ;
 	// show weather for selected city
-	// showWeather(selectedCity);
+	// getWeather(selectedCity);
 }
 
 // Create button in search history
@@ -98,9 +81,64 @@ function createButton(name, index) {
 	);
 }
 
-// function to show weather for selected City
-function showWeather(here) {
-	// change query City
+// Show weather data on page
+function showWeather(weatherData, uvData) {
+	console.log(weatherData);
+	console.log(uvData);
+	var today = moment().format("M/D/YYYY");
+	$("#currentCity").text(weatherData.name + " (" + today + ") ");
+	$("#currentCity").append(
+		'<img src="http://openweathermap.org/img/wn/' +
+			weatherData.weather[0].icon +
+			'@2x.png" alt="weather icon">'
+	);
+	var F = Math.round((weatherData.main.temp * 9) / 5 - 459.67);
+	$("#temp").text("Temperature: " + F + " °F");
+	$("#humid").text("Humidity: " + weatherData.main.humidity + " %");
+	$("#wind").text("Wind Speed: " + weatherData.wind.speed + " MPH");
+	$("#uvindex").text("UV Index: " + uvData.value);
+}
+
+// SERVER INTERACTION
+// Get weather for selected City
+function getWeather(here) {
+	// Create query url with user input
 	queryCity = "q=" + here;
-	console.log(queryCity);
+
+	var queryURL =
+		"https://api.openweathermap.org/data/2.5/weather?" +
+		queryCity +
+		"&appid=" +
+		key;
+	console.log(queryURL);
+
+	// Get data from Open Weather API
+	$.ajax({
+		url: queryURL,
+		method: "GET"
+	}).then(function(response) {
+		var weatherData = response;
+
+		// Create query url with coorindates from previous call
+		var lat = weatherData.coord.lat;
+		var lon = weatherData.coord.lon;
+		var query2URL =
+			"http://api.openweathermap.org/data/2.5/uvi?appid=" +
+			key +
+			"&lat=" +
+			lat +
+			"&lon=" +
+			lon;
+
+		// Get UV data from Open Weather API
+		$.ajax({
+			url: query2URL,
+			method: "GET"
+		}).then(function(response) {
+			var uvData = response;
+
+			// and call function to show data on page
+			showWeather(weatherData, uvData);
+		});
+	});
 }

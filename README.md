@@ -78,7 +78,11 @@ Local Storage
 
 ### Known Issues
 
-Can't use Return button to search - it refreshes page instead
+- can't use Return button to search - it refreshes page instead
+- text doesn't clear from text entry box when search button is clicked
+- new city should be added to search history at top insetad of bottom
+- city should not be added to search history if already present
+- history should be limited?
 
 ### Acknowledgements
 
