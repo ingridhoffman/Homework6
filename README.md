@@ -38,8 +38,6 @@ The following image demonstrates the application functionality:
 
 ## Developer Notes
 
-Added functionality to open page with weather at current user location (if geolocation is available)
-
 ### HTML
 
 - Header with Page Title
@@ -54,39 +52,27 @@ Added functionality to open page with weather at current user location (if geolo
 ### Script Logic
 
 ```
-Globals
-- Variable for Current City
-- Array for search history
-- API Key
+User Opens Page
+- Set variable for starting city
+- Set array for search history
+- Get previously saved search history (if any) from local storage
+- Set API Key
+- Show on page: search history, weather & forecast for startng city
 
-Set Current City
-- Get user entry from search box
-- Get user entry from history list
+User Searches for City
+- Get user entry when Return is pressed or Search button is clicked
+- Add new city to search history (at top)
+- Show on page: updated search history, weather & forecast for chosen city
 
-Make API Call
-- Custom query URL with variables for City and API Key
-
-Get Data
--
-
-
-Local Storage
-- Get search history when page is opened or refreshed
-- Update history array when user does a search - verify search is for City not already on list
-
+User Picks City from History
+- Get user selection when user clicks on history button
+- Show on page: weather & forecast for chosen city
 ```
 
 ### Known Issues
 
-1. Without a paid subscription to Open Weather, the application cannot get the daily forecast that shows overall averages for each day. So forecast data is pulled from the 3-hour forecast increments provided in the free 5-day forecast which simply shows the predicted weather at that time.
-
-- can't use Return button to search - it refreshes page instead
-- text doesn't clear from text entry box when search button is clicked
-- new city should be added to search history at top insetad of bottom
-- city should not be added to search history if already present
-- history should be limited?
-- use of query variables should be simplified - queryCity variable?
-
-### Acknowledgements
+1. Without a paid subscription to Open Weather, the application cannot get the daily forecast that shows overall averages for each day. So forecast data is extracted from the 3-hour forecast increments provided in the free 5-day forecast which simply show the predicted weather at that exact time.
 
 ### Application URL
+
+https://ingridhoffman.github.io/Homework6/
