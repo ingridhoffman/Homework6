@@ -105,7 +105,7 @@ function showWeather(weatherData, uvData) {
 	// write to HTML
 	$("#currentCity").text(weatherData.name + " (" + d + ") ");
 	$("#currentCity").append(
-		'<img src="http://openweathermap.org/img/wn/' +
+		'<img src="https://openweathermap.org/img/wn/' +
 			weatherData.weather[0].icon +
 			'@2x.png" alt="weather icon" width="60px" height="60px">'
 	);
@@ -140,7 +140,7 @@ function showForecast(forecastData) {
 		var boxID = $("#" + i);
 		boxID.html("<h4>" + d + "</h4>");
 		boxID.append(
-			'<img src="http://openweathermap.org/img/wn/' +
+			'<img src="https://openweathermap.org/img/wn/' +
 				dataIndex.weather[0].icon +
 				'@2x.png" alt="weather icon" width="50px" height="50px">'
 		);
