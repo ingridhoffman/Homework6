@@ -171,7 +171,7 @@ function getWeather(here) {
 		var lat = weatherData.coord.lat;
 		var lon = weatherData.coord.lon;
 		var query2URL =
-			"http://api.openweathermap.org/data/2.5/uvi?appid=" +
+			"https://api.openweathermap.org/data/2.5/uvi?appid=" +
 			key +
 			"&lat=" +
 			lat +
