@@ -78,11 +78,14 @@ Local Storage
 
 ### Known Issues
 
+1. Without a paid subscription to Open Weather, the application cannot get the daily forecast that shows overall averages for each day. So forecast data is pulled from the 3-hour forecast increments provided in the free 5-day forecast which simply shows the predicted weather at that time.
+
 - can't use Return button to search - it refreshes page instead
 - text doesn't clear from text entry box when search button is clicked
 - new city should be added to search history at top insetad of bottom
 - city should not be added to search history if already present
 - history should be limited?
+- use of query variables should be simplified - queryCity variable?
 
 ### Acknowledgements
 

@@ -31,6 +31,7 @@
 		</header>
 		<main class="row">
 			<aside class="col-sm-4">
+				<h4>Search for a City:</h4>
 				<form class="input-group">
 					<input
 						type="text"
@@ -39,12 +40,12 @@
 						id="searchEntry"
 					/>
 					<div class="input-group-append">
-						<button class="btn btn-primary" type="button" id="searchBtn">
+						<button class="btn btn-primary" type="submit" id="searchBtn">
 							<i class="fas fa-search"></i>
 						</button>
 					</div>
 				</form>
-				<div class="btn-group-vertical" id="history"></div>
+				<div class="d-flex flex-column-reverse" id="history"></div>
 			</aside>
 			<div class="col-sm-8">
 				<section class="row">
@@ -57,11 +58,12 @@
 					</div>
 				</section>
 				<section class="row" id="fiveDay">
-					<div class="card" id="dayOne">1</div>
-					<div class="card" id="dayTwo">2</div>
-					<div class="card" id="dayThree">3</div>
-					<div class="card" id="dayFour">4</div>
-					<div class="card" id="dayFive">5</div>
+					<h3>5-day Forecast</h3>
+					<div class="card" id="0"></div>
+					<div class="card" id="1"></div>
+					<div class="card" id="2"></div>
+					<div class="card" id="3"></div>
+					<div class="card" id="4"></div>
 				</section>
 			</div>
 		</main>
