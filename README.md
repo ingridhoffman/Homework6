@@ -1,6 +1,6 @@
-# Homework6
+# Weather Dashboard
 
-Server-Side APIs: Weather Dashboard
+Homework6: Server-Side APIs
 
 ## Assignment
 
