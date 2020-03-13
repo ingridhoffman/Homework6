@@ -72,6 +72,7 @@ User Picks City from History
 ### Known Issues
 
 1. Without a paid subscription to Open Weather, the application cannot get the daily forecast that shows overall averages for each day. So forecast data is extracted from the 3-hour forecast increments provided in the free 5-day forecast which simply show the predicted weather at that exact time.
+2. Currently, the page initializing with weather in Portland but this could be improved by allowing the user to choose the City to initialize or by using geo-location to the current user City.
 
 ### Application URL
 
