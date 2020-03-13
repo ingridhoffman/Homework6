@@ -75,4 +75,4 @@ User Picks City from History
 
 ### Application URL
 
-https://ingridhoffman.github.io/Homework6/
+https://ingridhoffman.github.io/WeatherDashboard/
